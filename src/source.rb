@@ -6,8 +6,11 @@ class Source
     @id = id
     @id = Random.rand(1..1000) if @id.nil?
     @name = name
-    @items = items
+    @items = items || []
   end
 
-  def add_item(item); end
+  def add_item(item)
+    item.source = self
+    @items.push(item)
+ end
 end
