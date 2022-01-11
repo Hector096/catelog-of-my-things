@@ -1,4 +1,6 @@
-class MusicAlbum
+require 'item'
+
+class MusicAlbum < Item
   attr_accessor :on_spotify
 
   def initialize(hash = {})

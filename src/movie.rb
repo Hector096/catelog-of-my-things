@@ -1,4 +1,6 @@
-class Movie
+require 'item'
+
+class Movie < Item
   attr_accessor :silet
 
   def initialize(hash = {})
