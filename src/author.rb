@@ -7,8 +7,11 @@ class Author
     @id = Random.rand(1..1000) if @id.nil?
     @first_name = first_name
     @last_name = last_name
-    @item = items
+    @items = items || []
   end
 
-  def add_item; end
+  def add_item(item)
+    @items.push(item)
+    item.author = self
+  end
 end
