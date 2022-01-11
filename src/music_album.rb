@@ -1,25 +1,17 @@
-class Book
+class MusicAlbum
   attr_accessor :on_spotify
-  def initialize({
-    genre:,
-    author:,
-    source:,
-    label:,
-    publish_date:,
-    archived:,
-    on_spotify:,
-    id: nil
-  })
+
+  def initialize(hash = {})
     super(
-        id: id,
-        genre: genre,
-        author: author,
-        source: source,
-        label: label,
-        publish_date: publish_date,
-        archived: archived
+        id: hash['id'],
+        genre: hash['genre'],
+        author: hash['author'],
+        source: hash['source'],
+        label: hash['label'],
+        publish_date: hash['publish_date'],
+        archived: hash['archived']
     )
-    @on_spotify = on_spotify
+    @on_spotify = hash['on_spotify']
   end
 
   private

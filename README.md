@@ -13,12 +13,25 @@
 - Open the folder with your code editor
 - Create a branch to work on
 
+## Authors
 
-👤 **Author**
+👤 **Author 1**
 
 :bearded_person: **Hector**
   - GitHub: [@githubhandle](https://github.com/Hector096)
   - Linkedin: [@linkedinhandle](https://www.linkedin.com/in/hector096/)
+
+👤 **Author 2**
+
+:bearded_person: **Leandro**
+  - GitHub: [@githubhandle](https://github.com/Hector096)
+  - Linkedin: [@linkedinhandle](https://www.linkedin.com/in/hector096/)
+  
+👤 **Author 3**
+
+:bearded_person: **AZARIA**
+  - GitHub: [@azy64](https://github.com/azy64)
+  - Linkedin: [@linkedinhandle](https://www.linkedin.com/in/azaria-saidi-524780112/)
 
 
 ## 🤝 Contributing

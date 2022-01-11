@@ -1,28 +1,18 @@
 class Book
   attr_accessor :publisher, :cover_state
 
-  def initialize({
-    genre:,
-    author:,
-    source:,
-    label:,
-    publish_date:,
-    archived:,
-    publisher:,
-    cover_state:,
-    id: nil
-})
+  def initialize(hash = {})
     super(
-        id: id,
-        genre: genre,
-        author: author,
-        source: source,
-        label: label,
-        publish_date: publish_date,
-        archived: archived
+        id: hash['id'],
+        genre: hash['genre'],
+        author: hash['author'],
+        source: hash['source'],
+        label: hash['label'],
+        publish_date: hash['publish_date'],
+        archived: hash['archived']
     )
-    @publisher = publisher
-    @cover_state = cover_state
+    @publisher = hash['publisher']
+    @cover_state = hash['cover_state']
   end
 
   private
