@@ -12,5 +12,5 @@ class Source
   def add_item(item)
     item.source = self
     @items.push(item)
- end
+  end
 end
