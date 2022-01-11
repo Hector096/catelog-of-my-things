@@ -1,6 +1,6 @@
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date
-  attr_reader :id, :archived
+  attr_accessor :source, :label, :publish_date
+  attr_reader :id, :archived, :author, :genre
 
   def initialize(hash = {})
     @id = hash['id']
@@ -14,6 +14,26 @@ class Item
   end
 
   def move_to_archived; end
+
+  def author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
+  end
+
+  def add_genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
+  end
+
+  def add_source=(source)
+    @source = source
+    source.items.push(self) unless source.items.include?(self)
+  end
+
+  def add_label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
+  end
 
   private
 

@@ -9,5 +9,8 @@ class Genre
     @items = items
   end
 
-  def add_item(item); end
+  def add_item(item)
+    item.genre = self
+    @items.push(item)
+  end
 end
