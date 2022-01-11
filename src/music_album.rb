@@ -1,13 +1,28 @@
 class Book
-    attr_accessor :on_spotify
+  attr_accessor :on_spotify
+  def initialize({
+    genre:,
+    author:,
+    source:,
+    label:,
+    publish_date:,
+    archived:,
+    on_spotify:,
+    id: nil
+  })
+    super(
+        id: id,
+        genre: genre,
+        author: author,
+        source: source,
+        label: label,
+        publish_date: publish_date,
+        archived: archived
+    )
+    @on_spotify = on_spotify
+  end
 
-    def initialize (id: nil,genre:,author:,source:,:label:,publish_date:,archived:,on_spotify:)
-        super(id:id,genre: genre,author: author,source: source,label: label,publish_date:publish_date,archived:archived)
-        @on_spotify = on_spotify
-    end
+  private
 
-    private
-    def can_be_archived?
-    end
-
+  def can_be_archived?; end
 end
