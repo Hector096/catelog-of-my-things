@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_accessor :source, :label, :publish_date
   attr_reader :id
@@ -7,10 +9,6 @@ class Item
     @id = Random.rand(1..1000) if @id.nil?
     @publish_date = Date.parse(publish_date)
     @archived = archived
-  end
-
-  def can_be_archived?
-    (DateTime.now.year - @publish_date.year) > 10
   end
 
   def move_to_archive
@@ -37,5 +35,9 @@ class Item
     label.items.push(self) unless label.items.include?(self)
   end
 
-  private :can_be_archived
+  private
+
+  def can_be_archived?
+    (DateTime.now.year - @publish_date.year) > 10
+  end
 end
