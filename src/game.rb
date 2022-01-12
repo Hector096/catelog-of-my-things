@@ -12,7 +12,7 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
-  def can_be_archived?; end
-
-  private :can_be_archived
+  def can_be_archived?
+    super && (Time.now.year - @last_played_at.year) > 2
+  end
 end
