@@ -3,20 +3,16 @@ require 'item'
 class Movie < Item
   attr_accessor :silet
 
-  def initialize(hash = {})
+  def initialize(publish_date:, archived:, silet:, id: nil)
     super(
-        id: hash['id'],
-        genre: hash['genre'],
-        author: hash['author'],
-        source: hash['source'],
-        label: hash['label'],
-        publish_date: hash['publish_date'],
-        archived: hash['archived']
+        id: id,
+        publish_date: publish_date,
+        archived: archived
     )
-    @silet = hash['silet']
+    @silet = silet
   end
 
-  private
-
   def can_be_archived?; end
+
+  private :can_be_archived
 end

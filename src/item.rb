@@ -1,21 +1,23 @@
 class Item
   attr_accessor :source, :label, :publish_date
-  attr_reader :id, :archived, :author, :genre
+  attr_reader :id
 
-  def initialize(hash = {})
-    @id = hash['id']
+  def initialize(id:, publish_date:, archived: false)
+    @id = id
     @id = Random.rand(1..1000) if @id.nil?
-    @genre = hash['genre']
-    @author = hash['author']
-    @source = hash['source']
-    @label = hash['label']
-    @publish_date = hash['publish_date']
-    @archived = hash['archived']
+    @publish_date = Date.parse(publish_date)
+    @archived = archived
   end
 
-  def move_to_archived; end
+  def can_be_archived?
+    (DateTime.now.year - @publish_date.year) > 10
+  end
 
-  def author=(author)
+  def move_to_archive
+    @archived = can_be_archived?
+  end
+
+  def add_author=(author)
     @author = author
     author.items.push(self) unless author.items.include?(self)
   end
@@ -35,7 +37,5 @@ class Item
     label.items.push(self) unless label.items.include?(self)
   end
 
-  private
-
-  def can_be_archived?; end
+  private :can_be_archived
 end
