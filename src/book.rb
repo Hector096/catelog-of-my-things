@@ -2,21 +2,19 @@ require 'item'
 class Book < Item
   attr_accessor :publisher, :cover_state
 
-  def initialize(hash = {})
+  def initialize(publish_date:, archived:, publisher:, cover_state:, id: nil)
     super(
-        id: hash['id'],
-        genre: hash['genre'],
-        author: hash['author'],
-        source: hash['source'],
-        label: hash['label'],
-        publish_date: hash['publish_date'],
-        archived: hash['archived']
+        id: id,
+        publish_date: publish_date,
+        archived: archived
     )
-    @publisher = hash['publisher']
-    @cover_state = hash['cover_state']
+    @publisher = publisher
+    @cover_state = cover_state
   end
 
-  private
+  def can_be_archived?
+    super || @cover_state == 'bad'
+  end
 
-  def can_be_archived?; end
+  private :can_be_archived
 end

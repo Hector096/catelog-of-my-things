@@ -1,22 +1,18 @@
 require 'item'
 
 class Movie < Item
-  attr_accessor :silet
+  attr_accessor :silent
 
-  def initialize(hash = {})
+  def initialize(publish_date:, archived:, silent:, id: nil)
     super(
-        id: hash['id'],
-        genre: hash['genre'],
-        author: hash['author'],
-        source: hash['source'],
-        label: hash['label'],
-        publish_date: hash['publish_date'],
-        archived: hash['archived']
+        id: id,
+        publish_date: publish_date,
+        archived: archived
     )
-    @silet = hash['silet']
+    @silent = silent
   end
 
-  private
-
-  def can_be_archived?; end
+  def can_be_archived?
+    super || @silent
+  end
 end

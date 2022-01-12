@@ -2,21 +2,17 @@ require 'item'
 class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
-  def initialize(hash = {})
+  def initialize(publish_date:, archived:, multiplayer:, last_played_at:, id: nil)
     super(
-        id: hash['id'],
-        genre: hash['genre'],
-        author: hash['author'],
-        source: hash['source'],
-        label: hash['label'],
-        publish_date: hash['publish_date'],
-        archived: hash['archived']
+        id: id,
+        publish_date: publish_date,
+        archived: archived
     )
-    @multiplayer = hash['multiplayer']
-    @last_played_at = hash['last_played_at']
+    @multiplayer = multiplayer
+    @last_played_at = last_played_at
   end
 
-  private
-
-  def can_be_archived?; end
+  def can_be_archived?
+    super && (Time.now.year - @last_played_at.year) > 2
+  end
 end
