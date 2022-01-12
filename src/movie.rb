@@ -16,4 +16,3 @@ class Movie < Item
     super || @silent
   end
 end
-
