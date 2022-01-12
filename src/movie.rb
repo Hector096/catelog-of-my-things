@@ -1,18 +1,19 @@
 require 'item'
 
 class Movie < Item
-  attr_accessor :silet
+  attr_accessor :silent
 
-  def initialize(publish_date:, archived:, silet:, id: nil)
+  def initialize(publish_date:, archived:, silent:, id: nil)
     super(
         id: id,
         publish_date: publish_date,
         archived: archived
     )
-    @silet = silet
+    @silent = silent
   end
 
-  def can_be_archived?; end
-
-  private :can_be_archived
+  def can_be_archived?
+    super || @silent
+  end
 end
+
