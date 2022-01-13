@@ -29,6 +29,15 @@ class Main
         @movies = []
     end
 
+    def load_data
+        read_albums
+        read_genre
+        read_books
+        read_label
+        read_games
+        read_author
+    end
+
     def options
         available = {
             '1' => 'List all books',
@@ -92,6 +101,7 @@ end
 
 def app
   application = Main.new
+  application.load_data
   application.run
 end
 app
