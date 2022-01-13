@@ -2,7 +2,7 @@ class Label
   attr_accessor :title, :color, :items
   attr_reader :id
 
-  def initialize(id:, title:, color:)
+  def initialize(id: nil, title:, color:)
     @id = id
     @id = Random.rand(1..1000) if @id.nil?
     @title = title

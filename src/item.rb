@@ -9,9 +9,7 @@ class Item
     @archived = archived
   end
 
-  def can_be_archived?
-    (DateTime.now.year - @publish_date.year) > 10
-  end
+  
 
   def move_to_archive
     @archived = can_be_archived?
@@ -37,5 +35,8 @@ class Item
     label.items.push(self) unless label.items.include?(self)
   end
 
-  private :can_be_archived
+  private
+  def can_be_archived?
+    (DateTime.now.year - @publish_date.year) > 10
+  end
 end

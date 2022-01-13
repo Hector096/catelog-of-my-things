@@ -1,4 +1,4 @@
-require 'item'
+require_relative 'item'
 
 class Movie < Item
   attr_accessor :silent
@@ -14,5 +14,14 @@ class Movie < Item
 
   def can_be_archived?
     super || @silent
+  end
+
+  def to_json(*_args)
+    JSON.dump({
+                silent: @silent,
+                date: @publish_date,
+                title: @label.title,
+                color: @label.color
+              })
   end
 end
