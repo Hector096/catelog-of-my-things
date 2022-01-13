@@ -19,7 +19,7 @@ describe Label do
                       cover_state: true, archived: false)
       label.add_item(book)
       # puts genre.inspect
-      #put some comment about the test
+      # put some comment about the test
       it 'should be equal to 1' do
         expect(label.items.length).to eq 1
         expect(label.color).to eq 'blue'
