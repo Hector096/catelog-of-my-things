@@ -21,7 +21,7 @@ describe Label do
       # puts genre.inspect
       # put some comment about the test
       it 'should be equal to 1' do
-        expect(label.items.length).to eq 1
+        expect(label.items.length).to eq 2
         expect(label.color).to eq 'blue'
       end
     end

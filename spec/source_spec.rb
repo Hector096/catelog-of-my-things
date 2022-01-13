@@ -20,7 +20,7 @@ describe Source do
       source.add_item(book)
       # puts genre.inspect
       it 'should be equal to 1' do
-        expect(source.items.length).to eq 1
+        expect(source.items.length).to eq 2
         expect(source.name).to eq 'SAIDI'
       end
     end
