@@ -38,7 +38,7 @@ module CreateMusic
     file = File.read('json/genre.json')
     file_data = JSON.parse(file)
     file_data.each do |genre|
-      new_genre = Genre.new(name:genre['name'])
+      new_genre = Genre.new(name: genre['name'])
       @genres.push(new_genre)
     end
   end
@@ -50,7 +50,7 @@ module CreateMusic
     print ' Is it on Spotify? Yes/No: '
     on_spotify = gets.chomp
 
-    new_album = MusicAlbum.new(on_spotify:on_spotify,publish_date: publish_date)
+    new_album = MusicAlbum.new(on_spotify: on_spotify, publish_date: publish_date)
 
     add_author(new_album)
     add_genre(new_album)
@@ -75,7 +75,8 @@ module CreateMusic
     else
       puts Rainbow("\n List of Albums:\n").aqua.bright.underline
       @music_albums.each_with_index do |album, index|
-        puts " #{index + 1}. Album title: #{album.label.title}\n  - Published on: #{album.publish_date}\n  - Is it on Spotify #{album.on_spotify} #{album.label.title}"
+        print " #{index + 1}. Album title: #{album.label.title}\n  - "
+        print " Published on: #{album.publish_date}\n  - Is it on Spotify #{album.on_spotify} #{album.label.title}"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end

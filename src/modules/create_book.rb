@@ -19,8 +19,8 @@ module CreateBook
     file = File.read('json/book.json')
     file_data = JSON.parse(file)
     file_data.each do |book|
-      book_instance = Book.new(publish_date:book['publish_date'], cover_state:book['cover_state'])
-      label_instance = Label.new(title:book['title'],color: book['color'])
+      book_instance = Book.new(publish_date: book['publish_date'], cover_state: book['cover_state'])
+      label_instance = Label.new(title: book['title'], color: book['color'])
       book_instance.label = label_instance
       @books.push(book_instance)
     end
@@ -36,7 +36,7 @@ module CreateBook
     file = File.read('json/label.json')
     file_data = JSON.parse(file)
     file_data.each do |label|
-      new_label = Label.new(title:label['title'], color:label['color'])
+      new_label = Label.new(title: label['title'], color: label['color'])
       @labels.push(new_label)
     end
   end
@@ -73,12 +73,10 @@ module CreateBook
     else
       puts Rainbow("\n List of books:\n").aqua.bright.underline
       @books.each_with_index do |book, index|
-        puts " #{index + 1}. Book title: #{book.label.title}\n  - Published on: #{book.publish_date}\n  - Cover State: #{book.cover_state}"
+        print " #{index + 1}. Book title: #{book.label.title}\n  -"
+        print "Published on: #{book.publish_date}\n  - Cover State: #{book.cover_state}"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end
   end
 end
-
-
-

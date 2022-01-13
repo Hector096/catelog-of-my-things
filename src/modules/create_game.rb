@@ -19,8 +19,9 @@ module CreateGame
     file = File.read('json/game.json')
     file_data = JSON.parse(file)
     file_data.each do |game|
-      game_instance = Game.new(multiplayer:game['multiplayer'],last_played_at: game['last_played_at'],publish_date: game['publish_date'])
-      label_instance = Label.new(title:game['title'],color: game['color'])
+      game_instance = Game.new(multiplayer: game['multiplayer'], last_played_at: game['last_played_at'],
+                               publish_date: game['publish_date'])
+      label_instance = Label.new(title: game['title'], color: game['color'])
       game_instance.label = label_instance
       @games.push(game_instance)
     end
@@ -36,7 +37,7 @@ module CreateGame
     file = File.read('json/author.json')
     file_data = JSON.parse(file)
     file_data.each do |author|
-      new_author = Author.new(first_name:author['first_name'], last_name:author['last_name'])
+      new_author = Author.new(first_name: author['first_name'], last_name: author['last_name'])
       @authors.push(new_author)
     end
   end
@@ -51,7 +52,7 @@ module CreateGame
     print ' When was the game published?(yyyy/mm/dd): '
     publish_date = gets.chomp
 
-    new_game = Game.new(multiplayer:number_of_players, last_played_at: date_of, publish_date:publish_date)
+    new_game = Game.new(multiplayer: number_of_players, last_played_at: date_of, publish_date: publish_date)
 
     add_author(new_game)
     add_genre(new_game)
@@ -76,7 +77,8 @@ module CreateGame
     else
       puts Rainbow("\n List of games:\n").aqua.bright.underline
       @games.each_with_index do |game, index|
-        puts " #{index + 1}. Game name: #{game.label.title}\n  - Number of players: #{game.multiplayer}\n  - Last played on: #{game.last_played_at}"
+        print " #{index + 1}. Game name: #{game.label.title}\n  - "
+        print "Number of players: #{game.multiplayer}\n  - Last played on: #{game.last_played_at}"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end

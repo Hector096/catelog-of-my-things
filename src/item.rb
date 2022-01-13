@@ -1,5 +1,5 @@
 class Item
-  attr_accessor :source, :label, :publish_date
+  attr_accessor :source, :label, :publish_date, :archived
   attr_reader :id
 
   def initialize(id:, publish_date:, archived: false)
@@ -8,8 +8,6 @@ class Item
     @publish_date = Date.parse(publish_date)
     @archived = archived
   end
-
-  
 
   def move_to_archive
     @archived = can_be_archived?
@@ -36,6 +34,7 @@ class Item
   end
 
   private
+
   def can_be_archived?
     (DateTime.now.year - @publish_date.year) > 10
   end

@@ -13,7 +13,7 @@ module MainMethods
     print '  Last name: '
     last_name = gets.chomp
 
-    author_name = Author.new(first_name:first_name, last_name: last_name)
+    author_name = Author.new(first_name: first_name, last_name: last_name)
     author_name.add_item(item)
     @authors.push(author_name)
   end
@@ -23,7 +23,7 @@ module MainMethods
     print '  Genre: '
     genre_name = gets.chomp
 
-    genre = Genre.new(name:genre_name)
+    genre = Genre.new(name: genre_name)
     genre.add_item(item)
     @genres.push(genre)
   end
@@ -36,7 +36,7 @@ module MainMethods
     print '  Color: '
     color = gets.chomp
 
-    label = Label.new(title: title,color: color)
+    label = Label.new(title: title, color: color)
     label.add_item(item)
     @labels.push(label)
   end

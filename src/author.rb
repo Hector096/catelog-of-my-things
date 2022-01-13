@@ -2,7 +2,7 @@ class Author
   attr_accessor :first_name, :last_name, :items
   attr_reader :id
 
-  def initialize(id:nil, first_name:, last_name:)
+  def initialize(first_name:, last_name:, id: nil)
     @id = id
     @id = Random.rand(1..1000) if @id.nil?
     @first_name = first_name
@@ -11,7 +11,7 @@ class Author
   end
 
   def add_item(item)
-    item.add_author self
+    item.add_author = self
     @items.push(item)
   end
 end
