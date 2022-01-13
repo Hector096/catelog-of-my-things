@@ -7,6 +7,7 @@ require_relative 'modules/create_label'
 require_relative 'modules/create_movie'
 require_relative 'modules/create_source'
 require_relative 'label'
+
 class Main
     include CreateBook
     include SourceModule
@@ -15,7 +16,7 @@ class Main
     include GenreModule
     include CreateGame
     include AuthorModule
-    attr_accessor :labels
+
     def initialize
         @active = true
         @books = []
@@ -27,6 +28,7 @@ class Main
         @authors = []
         @movies = []
     end
+
     def options
         available = {
             '1' => 'List all books',
@@ -46,6 +48,7 @@ class Main
         puts 'Please choose an option by enterin a number:'
         available.each { |key, value| puts "#{key} - #{value}" }
     end
+
     def handle_number
         choice = gets.chomp
         case choice
@@ -76,6 +79,7 @@ class Main
             puts 'Thank you for using  this app!'
         end
     end
+
     def run
         puts 'welcome'
         puts ''
@@ -84,8 +88,8 @@ class Main
             handle_number
         end
     end
-  end
 end
+
 def app
   application = Main.new
   application.run

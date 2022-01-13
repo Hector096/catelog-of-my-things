@@ -1,15 +1,13 @@
 require_relative '../author'
 require_relative '../genre'
 require_relative '../label'
-require_relative '../music'
+require_relative '../music_album'
 require_relative 'main_methods'
 require_relative 'create_book'
 require_relative 'create_game'
 
 module CreateMusic
   include MainMethods
-  include CreateBook
-  include CreateGame
 
   def save_album
     File.write('json/album.json', JSON.dump(@music_albums))
