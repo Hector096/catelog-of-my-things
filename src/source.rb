@@ -2,7 +2,7 @@ class Source
   attr_reader :id, :items
   attr_accessor :name
 
-  def initialize(id:, name:)
+  def initialize(id:nil, name:)
     @id = id
     @id = Random.rand(1..1000) if @id.nil?
     @name = name
