@@ -16,6 +16,7 @@ class Book < Item
     JSON.dump({
                 title: @label.title,
                 color: @label.color,
+                publisher:@publisher,
                 publish_date: @publish_date,
                 cover_state: @cover_state
               })

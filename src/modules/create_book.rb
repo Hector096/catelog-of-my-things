@@ -19,7 +19,7 @@ module CreateBook
     file = File.read('json/book.json')
     file_data = JSON.parse(file)
     file_data.each do |book|
-      book_instance = Book.new(publish_date: book['publish_date'], cover_state: book['cover_state'])
+      book_instance = Book.new(publish_date: book['publish_date'], cover_state: book['cover_state'],publisher:book['publisher'])
       label_instance = Label.new(title: book['title'], color: book['color'])
       book_instance.label = label_instance
       @books.push(book_instance)
@@ -48,7 +48,10 @@ module CreateBook
     print ' Is the cover in a good/bad state? '
     state = gets.chomp
 
-    new_book = Book.new(publish_date, state)
+    print ' Publisher? '
+    publisher = gets.chomp
+
+    new_book = Book.new(publish_date:publish_date, cover_state:state,publisher: publisher)
 
     add_author(new_book)
     add_genre(new_book)
