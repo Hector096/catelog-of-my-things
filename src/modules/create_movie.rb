@@ -21,8 +21,8 @@ module CreateMovie
     file = File.read('json/movie.json')
     file_data = JSON.parse(file)
     file_data.each do |movie|
-        movie_instance = Movie.new(silent:movie['silent'], publish_date:movie['date'])
-      label_instance = Label.new(title:movie['title'], color: movie['color'])
+      movie_instance = Movie.new(silent: movie['silent'], publish_date: movie['date'])
+      label_instance = Label.new(title: movie['title'], color: movie['color'])
       movie_instance.label = label_instance
       @movies.push(movie_instance)
     end

@@ -46,7 +46,7 @@ module MainMethods
     print '  Name: '
     name = gets.chomp
 
-    source = Source.new(name:name)
+    source = Source.new(name: name)
     source.add_item(item)
     @sources.push(source)
   end
