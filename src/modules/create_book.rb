@@ -19,7 +19,7 @@ module CreateBook
     file = File.read('json/book.json')
     file_data = JSON.parse(file)
     file_data.each do |book|
-      book_instance = Book.new(publish_date: book['publish_date'], cover_state: book['cover_state'],publisher:book['publisher'])
+      book_instance = Book.new(publish_date: book['publish_date'], cover_state: book['cover_state'],publisher:book['publisher'] , id: book['id'])
       label_instance = Label.new(title: book['title'], color: book['color'])
       book_instance.label = label_instance
       @books.push(book_instance)
@@ -77,7 +77,7 @@ module CreateBook
       puts Rainbow("\n List of books:\n").aqua.bright.underline
       @books.each_with_index do |book, index|
         print " #{index + 1}. Book title: #{book.label.title}\n  -"
-        print "Published on: #{book.publish_date}\n  - Cover State: #{book.cover_state}"
+        print "Published on: #{book.publish_date}\n  - Cover State: #{book.cover_state}\n"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end

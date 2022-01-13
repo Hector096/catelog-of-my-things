@@ -14,4 +14,11 @@ class Label
     item.add_label = self
     @items.push(item)
   end
+
+  def to_json(*_args)
+    JSON.dump({
+                title: @title,
+                color: @color
+              })
+  end
 end

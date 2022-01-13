@@ -13,4 +13,10 @@ class Source
     item.add_source = self
     @items.push(item)
   end
+
+  def to_json(_name)
+    JSON.dump({
+                name: @name
+              })
+  end
 end

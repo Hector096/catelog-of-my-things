@@ -78,7 +78,7 @@ module CreateGame
       puts Rainbow("\n List of games:\n").aqua.bright.underline
       @games.each_with_index do |game, index|
         print " #{index + 1}. Game name: #{game.label.title}\n  - "
-        print "Number of players: #{game.multiplayer}\n  - Last played on: #{game.last_played_at}"
+        print "Number of players: #{game.multiplayer}\n  - Last played on: #{game.last_played_at}\n"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end

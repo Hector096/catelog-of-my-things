@@ -74,7 +74,7 @@ module CreateMusic
       puts Rainbow("\n List of Albums:\n").aqua.bright.underline
       @music_albums.each_with_index do |album, index|
         print " #{index + 1}. Album title: #{album.label.title}\n  - "
-        print " Published on: #{album.publish_date}\n  - Is it on Spotify #{album.on_spotify} #{album.label.title}"
+        print " Published on: #{album.publish_date}\n  - Is it on Spotify #{album.on_spotify} #{album.label.title}\n"
         puts Rainbow("__________________________________________\n").aqua.bright
       end
     end

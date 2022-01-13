@@ -14,6 +14,7 @@ class Book < Item
 
   def to_json(*_args)
     JSON.dump({
+                id:@id,
                 title: @label.title,
                 color: @label.color,
                 publisher:@publisher,
