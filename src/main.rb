@@ -7,7 +7,7 @@ class Main
 
     def initialize
         @books = []
-    @labels = []
+        @labels = []
     end
 
     def options
@@ -34,11 +34,11 @@ class Main
         choice = gets.chomp
         case choice
         when '4'
-            @handler.list_games
+            
         when '7'
-            @handler.list_authors
+            
         when '12'
-            @handler.create_game
+            
         when '13'
             @active = false
             puts 'Thank you for using  this app!'
