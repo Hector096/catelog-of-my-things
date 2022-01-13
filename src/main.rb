@@ -16,6 +16,7 @@ class Main
     include GenreModule
     include CreateGame
     include AuthorModule
+    include CreateMovie
 
     def initialize
         @active = true
@@ -57,6 +58,7 @@ class Main
         when '2'
             album_list
         when '3'
+            movie_list
         when '4'
             game_list
         when '5'
@@ -72,6 +74,7 @@ class Main
         when '10'
             create_music_album
         when '11'
+            create_movie
         when '12'
             create_game_list
         when '13'

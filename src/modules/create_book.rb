@@ -5,6 +5,7 @@ require_relative '../book'
 require_relative 'main_methods'
 require_relative 'create_game'
 require_relative 'create_music'
+require_relative 'create_movie'
 
 module CreateBook
   include MainMethods
@@ -56,10 +57,13 @@ module CreateBook
     add_author(new_book)
     add_genre(new_book)
     add_label(new_book)
+    add_source(new_book)
+
 
     save_label
     save_author
     save_genre
+    save_source
 
     @books.push(new_book)
 

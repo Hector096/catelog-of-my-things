@@ -5,6 +5,7 @@ require_relative '../music_album'
 require_relative 'main_methods'
 require_relative 'create_book'
 require_relative 'create_game'
+require_relative 'create_movie'
 
 module CreateMusic
   include MainMethods
@@ -53,10 +54,12 @@ module CreateMusic
     add_author(new_album)
     add_genre(new_album)
     add_label(new_album)
+    add_source(new_album)
 
     save_genre
     save_label
     save_author
+    save_source
 
     @music_albums.push(new_album)
 

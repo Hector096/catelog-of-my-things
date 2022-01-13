@@ -5,6 +5,7 @@ require_relative '../game'
 require_relative 'main_methods'
 require_relative 'create_music'
 require_relative 'create_book'
+require_relative 'create_movie'
 
 module CreateGame
   include MainMethods
@@ -57,10 +58,12 @@ module CreateGame
     add_author(new_game)
     add_genre(new_game)
     add_label(new_game)
+    add_source(new_source)
 
     save_author
     save_genre
     save_label
+    save_source
 
     @games.push(new_game)
 
