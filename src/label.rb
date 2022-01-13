@@ -2,7 +2,7 @@ class Label
   attr_accessor :title, :color, :items
   attr_reader :id
 
-  def initialize(id:, title:, color:)
+  def initialize(title:, color:, id: nil)
     @id = id
     @id = Random.rand(1..1000) if @id.nil?
     @title = title
@@ -11,7 +11,14 @@ class Label
   end
 
   def add_item(item)
-    item.add_label self
+    item.add_label = self
     @items.push(item)
+  end
+
+  def to_json(*_args)
+    JSON.dump({
+                title: @title,
+                color: @color
+              })
   end
 end

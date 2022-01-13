@@ -15,4 +15,13 @@ class Movie < Item
   def can_be_archived?
     super || @silent
   end
+
+  def to_json(*_args)
+    JSON.dump({
+                silent: @silent,
+                date: @publish_date,
+                title: @label.title,
+                color: @label.color
+              })
+  end
 end
