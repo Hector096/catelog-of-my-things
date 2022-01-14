@@ -2,16 +2,33 @@
 
 > This app that will help you to keep a record of different types of things you won: books, music albums, movies, and games..
 
+> Choose an option:
+
+![Screenshot](./assets/main.png)
+
+> Create:
+
+![Screenshot](./assets/creation.png)
+
+> List:
+
+![Screenshot](./assets/list.png)
+
 ## Built With
 
 - Ruby
 
-## To get a local copy run the following steps:
-- Copy this link [this link](https://github.com/Hector096/catelog-of-my-things)
-- Open your terminal or command line
-- Run "git clone Paste [this link](https://github.com/Hector096/catelog-of-my-things)"
-- Open the folder with your code editor
-- Create a branch to work on
+## Test
+
+- Rspec
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps in your terminal.
+
+- `git clone https://github.com/Hector096/catelog-of-my-things`
+- `cd catelog-of-my-things`
+- `ruby src/main.rb`
 
 ## Authors
 
@@ -24,8 +41,8 @@
 👤 **Author 2**
 
 :bearded_person: **Leandro**
-  - GitHub: [@githubhandle](https://github.com/Hector096)
-  - Linkedin: [@linkedinhandle](https://www.linkedin.com/in/hector096/)
+  - GitHub: [@Leandro-Barretoo](https://github.com/Leandro-Barretoo)
+  - Linkedin: [Leandro Barreto](https://www.linkedin.com/in/leandroobarreto/)
   
 👤 **Author 3**
 
