@@ -41,6 +41,7 @@ class Main
   end
 
   def options
+    Dir.mkdir 'json' unless Dir.exist? 'json'
     available = {
       '1' => 'List all books',
       '2' => 'List all music albums',
