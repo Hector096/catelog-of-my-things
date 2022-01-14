@@ -58,7 +58,7 @@ module CreateGame
     add_author(new_game)
     add_genre(new_game)
     add_label(new_game)
-    add_source(new_source)
+    add_source(new_game)
 
     save_author
     save_genre
