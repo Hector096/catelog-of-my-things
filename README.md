@@ -30,6 +30,10 @@ To get a local copy up and running follow these simple example steps in your ter
 - `cd catelog-of-my-things`
 - `ruby src/main.rb`
 
+## Project overview
+
+[Loom](https://www.loom.com/share/a5449fdfb5fe4a8dad39f8e8add460fb)
+
 ## Authors
 
 👤 **Author 1**
